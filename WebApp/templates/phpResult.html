@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>php result</title>
+    <link rel="stylesheet" href="{% static './bootstrap/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static './stylesheet/css/mystyle.css '%}"/>
+    <script src="{% static './stylesheet/js/myjs.js '%}"></script>
+    <script src="{% static './stylesheet/jquery/jquery.js' %}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">   
+    
+   <style>
+    .javascript-result-parent{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    @media(max-width:900px){
+        .javascript-result-parent{
+            flex-direction:column;
+        }
+        .correct,
+        .incorrect,
+        .score{
+            width:95%; 
+        }
+    }
+    
+    .correct{
+        padding:20px;
+        background-color:green;
+        color: #f3f1f1;
+        margin:10px;
+        flex:33.3%;
+    }
+    
+    .incorrect{
+        padding:20px;
+        background-color:red;
+        color: #f3f1f1;
+        flex:33.3%;
+        margin:10px;
+    }
+    
+    .score{
+        padding:20px;
+        background-color:purple;
+        color: #f3f1f1;
+        flex:33.3%;
+        margin:10px;
+    }
+     .myheader,.footer{
+        background-color: rgb(0, 0, 87);
+      }
+      .phpGraphResult{
+        display: flex;
+        flex-direction: row;
+      }
+      .left-phpGraphResult{
+        flex: 33%;
+        margin: 10px;
+      }
+       .right-phpGraphResult{
+        flex: 67%;
+        margin: 10px;
+      }
+      @media(max-width: 900px){
+        .phpGraphResult{
+            flex-direction: column;
+             width: 100%;
+        }
+      }
+
+  </style>
+
+</head>
+<body>
+       <nav>
+         <h3 class="p-3 myheader text-white">Php Results</h3>
+      </nav>
+
+      <main>
+     <div class="container mt-3"> 
+           {% if failure %}
+              <h3 class="text-white bg-info p-3">{{failure}}&ensp;<a href="{% url 'amateurSignUp' %}">amateur</a></h3>   
+           {% elif success %}
+           <h3 class="text-white bg-info p-3">{{success}}&ensp;<a href="{% url 'expertSignUp' %}">expert</a></h3>
+           {% endif %}
+        <img src="{% static 'stylesheet/img/phpresult.png' %}" class="img-responsive w-100"/>
+        <div class="javascript-result-parent mt-3">
+            <div class="correct">
+               <h3 class="text-center">correct attempt<h3>
+                    
+                <span><p class="text-center">{{correct}}&ensp;<img src="{% static 'custom img/accept.png' %}" width="50" height="50"><p></span>
+             </div>
+             <div class="incorrect">
+                <h3 class="text-center">incorrect attempt<h3>
+                <span><p class="text-center"> {{incorrect}} &ensp;<img src="{% static 'custom img/cancel.png' %}" width="50" height="50"> <p></span>
+             </div>
+             <div class="score">
+                <h3 class="text-center">score percent<h3>
+                <span><p class="text-center"> {{percent}}% &ensp;<img src="{% static 'custom img/score.png' %}" width="50" height="50"><p></span>
+             </div>
+        </div> 
+
+        <div class="phpGraphResult mt-3 mb-3">
+              <div class="left-phpGraphResult">
+                    <h4>Total Marks</h4>
+                    <p style="font-size:400%;">{{score}}/250</p>
+
+              </div> 
+              <div class="right-phpGraphResult">
+                    Score<div class="progress">
+                       <div class="progress-bar progress-bar-striped active"
+                           aria-valuemin="0" aria-valuemax="100" style="width:{{percent}} %;">
+                             {{percent}}
+                         </div>
+                       
+                    </div>
+                    Correct<div class="progress">
+                       <div class="progress-bar progress-bar-striped active"
+                           aria-valuemin="0" aria-valuemax="100" style="width: {{correct}}%;">
+                             {{correct}}
+                         </div>
+                       
+                    </div>
+                    Incorrect<div class="progress">
+                       <div class="progress-bar progress-bar-striped active" 
+                           aria-valuemin="0" aria-valuemax="100" style="width: {{incorrect}}%;">
+                             {{incorrect}}
+                         </div>
+                       
+                    </div>
+                 
+              </div> 
+          
+    </div>
+   </main>
+
+   <footer class="footer text-white text-center p-3">
+           All &copy; rights are reserved by this site.
+   </footer>
+   
+   
+</body>
+</html>

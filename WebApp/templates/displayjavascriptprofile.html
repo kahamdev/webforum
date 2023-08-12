@@ -1,0 +1,41 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>display javascript expert profile</title>
+	<link rel="stylesheet" type="text/css" href="{% static '/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/custom css/custom.css' %}">
+	<script type="text/javascript" src="{% static '/custom js/custom.js' %}"></script>
+</head>
+<body>
+    <div class="container mt-5">
+    	     <h1>javascript experts information details</h1>
+    	     {% if display %}
+    	        {% for disp in display %}
+    	           <div class="card">
+    	           	    <div class="card-bordy">
+    	           	    	 <span>
+    	           	    	 <img src="{{disp.image.url}}" class="img-circle" width="50" height="50">
+    	           	    	 <h5>{{disp.name}}</h5>
+    	           	    	 </span>
+
+    	           	    	 <hr>
+    	           	    	 <h3 class="card-title">{{disp.title}}</h3>
+    	           	    	 <p class="card-text">{{disp.description}}</p>
+
+    	           	    	 <span>
+    	           	    	 	<p class="text-muted">{{disp.email}}&emsp;{{disp.phone}}</p>
+    	           	    	 </span>
+
+
+
+    	           	    </div>
+    	           </div>
+    	        {% endfor %}
+    	     {% endif %}
+    </div>
+</body>
+</html>

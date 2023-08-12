@@ -1,0 +1,80 @@
+{% extends 'expertBase.html' %}
+
+{% load static %}
+
+{% block title %} php experts {% endblock title %}
+
+{% block content %}
+ <style>
+    .phpImageBg{
+    background-image: url("/static/stylesheet/img/phpbg.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+   .phpfloating-btn{
+    text-decoration: none;
+    color: #ffff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px black;
+    padding: 10px;
+    background-color: rgb(10, 132, 247);
+    right: 20px;
+    bottom: 20px;
+    transition: all 0.8s ease-in-out 0.2s;
+    position: fixed;
+    cursor: pointer;
+}
+.phpfloating-btn:hover{
+      background-color: rgb(0,0,87);
+      color: #ffff;
+
+}
+.php-container{
+    max-width: 900px;
+    margin: auto;
+}
+.left-php-content:hover{
+     box-shadow: 0 2px 2px 0 rgb(0, 0, 87);
+     transform: translate(15px);
+     transition: all .8s ease-in-out .2s;
+     margin-top: 15px;
+     margin-bottom: 15px;
+     padding: 15px;
+     }
+      </style>
+     <div class="phpImageBg"></div>
+     <div class="container">
+           <a href="{% url 'askphp' %}" class="phpfloating-btn" >ask us</a>
+
+               <div class="php-container">
+               {% if display %}
+          
+               {% for disp in display %}
+               <div class="left-php-content mt-3 mb-5">
+                 
+                      <div class="left-top-php-content">
+                            <span><img  class="image-circle" width="50" height="50" src="{{disp.image.url}}"/>&ensp;{{disp.name}}</span>
+                      </div>
+                      <div class="left-middle-php-content">
+                             <h3>{{disp.title}}</h3>
+                            <p>{{disp.description}}</p>
+                      </div>
+                      <div class="left-bottom-php-content">
+                        <p class="text-muted">Email:{{disp.email}} &emsp;
+                        Mobile:+255{{disp.phone}}</p>
+                      </div>
+
+                      
+               </div>
+                         {% endfor %}
+                    {% endif %}       
+        
+         </div>
+
+     </div>
+{% endblock %}
+

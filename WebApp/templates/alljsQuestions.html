@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all javascript questions</title>
+    <link rel="stylesheet" href="{% static './bootstrap/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static './stylesheet/css/mystyle.css '%}"/>
+    <script src="{% static './stylesheet/js/myjs.js '%}"></script>
+    <script src="{% static './stylesheet/jquery/jquery.js' %}"></script>
+    
+   <style>
+      body{
+          background-color:rgb(0,0,87);
+      }
+      .jsqnslink{
+        background-color:rgb(0,46,0);
+        color:white;
+        padding: 15px;
+        text-decoration:none;
+        border-radius:50px;
+    }
+    .jsqnslink:hover{
+        background-color:rgb(0,0,87);
+        color:white;
+        transition:all 0.8s ease-in-out;
+    }
+    
+
+
+        @media(max-width:900px){
+        .jsplayground-image{
+            width:100%;
+            height: 200px;
+        }
+         #title{
+            font-size:30px;
+        }
+    }
+
+  </style>
+
+</head>
+<body>
+    <div class="container mt-5">
+       <div class="alljsQns-container">
+        <h1 class="text-white text-center" id="title" style="font-size:60px; font-style:bold;">Javascript Surveyground</h1>
+        <hr class="bg-warning"> 
+        <h4 class="text-white"> {{js_bundles}} </h4>
+        <br>  
+        <p class="text-white">In this survey ground you are required to open button link then start survey from given mcq's questions.<br> <span style="color:red;">*</span>Note: score marks must be greater or equal 75 percent to meet our credit, thanks.</p>
+        <br>  
+        {% if js_bundle_question1 %}
+        <p class="text-white">{{js_bundle_question1}}&ensp;<a class="jsqnslink" href="{% url 'javascriptQuestions1' %}">open to start</a></p>
+ 
+        {% elif js_bundle_question2 %}
+        <p class="text-white">{{js_bundle_question2}}&ensp;<a class="jsqnslink" href="{% url 'javascriptQuestions2' %}">open to start</a></p>
+ 
+        {% elif js_bundle_question3 %}
+        <p class="text-white">{{js_bundle_question3}}&ensp;<a class="jsqnslink" href="{% url 'javascriptQuestions3' %}">open to start</a></p>
+        
+        {% elif js_bundle_question4 %}
+        <p class="text-white">{{js_bundle_question4}}&ensp;<a class="jsqnslink" href="{% url 'javascriptQuestions4' %}">open to start</a></p>
+
+ 
+        {% endif %}
+        
+
+
+   
+       </div>
+       <img class="mt-2 jsplayground-image" src="{%static 'custom img/isplayground.png' %}" height="400" width="950">
+       
+          
+    </div>
+   
+
+</body>
+</html>

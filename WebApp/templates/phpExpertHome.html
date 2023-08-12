@@ -1,0 +1,31 @@
+{% extends 'phpBase.html' %}
+{% load static %}
+{% block title %} php experts Home {% endblock title %}
+
+{% block content %}
+  <div class="bgcover">
+      <!--  <h1 class="bgcover-title"><u class="underline-title">Did you know about Php language?</u></h1>
+       <p class="bgcover-subtitle"><q>Php is most loved scripting programming language,<br> due to the easiest to understand for web development</q><br>said by <quote>kaham.</quote></p> -->
+  </div>
+  <div class="container">
+        <div class="phpExpertHome-container">
+             <h1></h1>
+             <div class="card mt-5">
+                <div class="shadow-sm m-2 p-3">
+                  {% for ppv in php_post_video %}
+                  <span><img src="/static/stylesheet/img/cat.jpg" width="50" height="50" class="rounded-circle"/>&ensp;{{user.username}} &emsp; {{ppv.create_at}}</span> 
+                  <hr> 
+                  <h1 class="card-title">{{ppv.title}}</h1> 
+                  <center>
+                  <video class="video mt-2 mb-2" controls style="width:440px; height:300px; outline:none; border:5px solid rgb(0,0,87); padding:10px;">
+                        <source  src="{{ppv.video.url}}" type="video/mp4"/>
+                  </video>
+                 </center>
+                  <p class="card-body">{{ppv.description}}</p>  
+                  {% endfor %}
+                </div>
+             </div>   
+        </div>
+  </div>
+
+{% endblock %}

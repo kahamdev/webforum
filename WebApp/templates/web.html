@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} web page {% endblock title %}
+
+{% block content %}
+
+<div class="parent">
+     <div class="image">&ensp;CIVE Admin Block</div>
+     <div class="child">
+        <div class="left">
+             <div class="left-sidebar">
+                      {% include 'leftsidebar.html' %}
+             </div>
+        </div>
+        <div class="right">
+            <div class="right-sidebar">
+                      <div class="container">
+                            <div class="web-container">
+                                  <h2 class="web-header">Meet with Web developer experts.</h2>
+                                  <p class="first-paragraph">Get help from web developer experts in minutes.
+                                      Your are welcome to meets with our experts that can solve the problem or challange you faced in web development.</p>
+                                   <p class="second-paragraph">
+                                       What software expert do you need?
+                                Check out the list below to find expert that fit your needs.</p>
+                                <ol type="1"  class="web-list text-primary">
+                                    <li style="margin: 5px;"><a style="text-decoration: none; " href="{% url 'phpExperts' %}">Php developer experts</a></li>
+                                    <li style="margin: 5px;"><a style="text-decoration: none;" href="{% url 'javascriptExperts' %}">Javascript developer experts</a></li>
+                                    <li style="margin: 5px;" ><a style="text-decoration: none;" href="{% url 'pythonExperts' %}">Python developer experts</a></li>
+                                </ol>
+                            </div>
+                      </div>  
+            </div> 
+            
+        </div>
+     </div>
+  
+</div>
+
+
+
+
+
+{% endblock %}

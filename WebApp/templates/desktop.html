@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %} desktop page {% endblock title %}
+
+{% block content %}
+
+<div class="parent">
+     <div class="image">&ensp;CIVE Admin Block</div>
+     <div class="child">
+        <div class="left">
+             <div class="left-sidebar">
+                      {% include 'leftsidebar.html' %}
+             </div>
+        </div>
+        <div class="right">
+            <div class="right-sidebar">
+                      <div class="container">
+                            <div class="desktop-container">
+                                  <h2 class="desktop-header">Meet with Desktop developer experts.</h2>
+                                  <p class="first-paragraph">Get help from desktop dev's experts in minutes.
+                                      Your are welcome to meets with our experts that can solve the problem or challange you faced in desktop app development.</p>
+                                   <p class="second-paragraph">
+                                       What software expert do you need?
+                                Check out the list below to find expert that fit your needs.</p>
+                                <ol type="1"  class="desktop-list text-primary">
+                                    <li style="margin: 5px;"><a style="text-decoration: none; " href="{% url 'cplusplusExperts' %}">C++ developer experts</a></li>
+                                    <li style="margin: 5px;"><a style="text-decoration: none;" href="{% url 'javaExperts' %}">Java developer experts</a></li>
+                                    <li style="margin: 5px;" ><a style="text-decoration: none;" href="{% url 'csharpExperts' %}">C# developer experts</a></li>
+                                </ol>
+                            </div>
+                      </div>  
+            </div> 
+            
+        </div>
+     </div>
+  
+</div>
+
+
+
+
+
+{% endblock %}

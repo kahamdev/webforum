@@ -1,0 +1,54 @@
+{% extends 'expertBase.html' %}
+
+{% block title %} expertsHome page {% endblock title %}
+
+{% block content %}
+<div class="parent">
+       <div class="image">&ensp;CIVE Admin Block</div>
+       <div class="container mt-3 mb-3">
+              <div class="row">
+                  <div class="col-md-4 col-lg-4 col-sm-4">
+                               <div class="card shadow-lg bg-body rounded">
+                                      <div class="card-header">Web Experts</div>
+                                      <div class="card-body">
+                                          <img class="w-100 mb-3 border-primary" src="/static/stylesheet/img/web.jpeg" alt=""/>
+                                          <p class="card-text">choose your category for web experts</p>
+                                          <a href="{% url 'askpython' %}" class="card-link border-primary">Python Experts</a><br>
+                                          <a href="{% url 'jsExpertHome' %}" class="card-link">Javascript Experts</a><br>
+                                          <a href="{% url 'phpExpertHome' %}" class="card-link">Php Experts</a>
+                                   </div>
+                               </div>
+                               
+                  </div>
+                  <div class="col-md-4 col-lg-4 col-sm-4">
+                            <div class="card shadow-lg bg-body rounded">
+                                   <div class="card-header">Desktop Experts</div>
+                                   <div class="card-body">
+                                       <img class="w-100 mb-3" height="200"  src="/static/stylesheet/img/desktop3.png" alt=""/>
+                                       <p class="card-text">choose your category for desktop experts</p>
+                                       <a href="{% url 'askcplusplus' %}" class="card-link">C++ Experts</a><br>
+                                       <a href="{% url 'askjava' %}" class="card-link">Java Experts</a><br>
+                                       <a href="{% url 'askcsharp' %}" class="card-link">C# Experts</a>
+                                </div>
+                            </div>
+                            
+                  </div>
+
+                  <div class="col-md-4 col-lg-4 col-sm-4">
+                     <div class="card shadow-lg bg-body rounded">
+                            <div class="card-header">Mobile Experts</div>
+                            <div class="card-body">
+                                <img class="w-100 mb-3" src="/static/stylesheet/img/mobile.jpg" alt=""/>
+                                  <p class="card-text">choose your category for mobile experts</p>
+                                          <a href="{% url 'askreactnative' %}" class="card-link">React native Experts</a><br>
+                                          <a href="{% url 'askandroid' %}" class="card-link">Android Experts</a><br>
+                                          <a href="{% url 'askflutter' %}" class="card-link">Flutter Experts</a>
+                         </div>
+                     </div>
+                     
+                 </div>
+                     
+              </div>
+       </div>  
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'jsBase.html' %}
+{% load static %}
+{% block title %} javascript experts Home {% endblock title %}
+
+{% block content %}
+ <div class="bgcover">
+       <!-- <h1 class="bgcover-title"><u class="underline-title">Did you know about Javascript language?</u></h1>
+       <p class="bgcover-subtitle"><q>Javascript is the client-server side scripting programming language,<br> that fits to the fields of web and mobile applications development</q><br>said by <quote>zainel.</quote></p> -->
+  </div>
+  <div class="container">
+        <div class="jsExpertHome-container">
+             <div class="card mt-5">
+                <div class="shadow-sm m-2 p-3">
+                  {% for jpv in js_post_video %}
+                  <span><img src="/static/stylesheet/img/cat.jpg" width="50" height="50" class="rounded-circle"/>&ensp;{{user.username}} &emsp; {{jpv.create_at}}</span> 
+                  <hr> 
+                  <h1 class="card-title">{{jpv.title}}</h1> 
+                  <center>
+                  <video class="video mt-2 mb-2" controls style="width:440px; height:300px; outline:none; border:5px solid rgb(0,0,87); padding:10px;">
+                        <source  src="{{jpv.video.url}}" type="video/mp4"/>
+                  </video>
+                 </center>
+                  <p class="card-body">{{jpv.description}}</p>  
+                  {% endfor %}
+                </div>
+             </div>   
+        </div>
+  </div>
+
+{% endblock %}

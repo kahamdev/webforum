@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+         {% block title %} {% endblock title %}
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="{% static './stylesheet/css/mystyle.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static './bootstrap/css/bootstrap.min.css' %}"/>
+     <script src="{% static './bootstrap/js/bootstrap.min.js' %}"></script> 
+  </head>
+  <style>
+    .mynav{
+      background-color:rgb(0,0,87);
+  }
+    .footer-group,.footer-item{
+      background-color:rgb(0,0,87);
+    }
+          .phpExpertHome-container{
+        max-width:900px;
+        height:900px;
+        background-color: #ffff;
+    }
+      .video{
+          align-items:center;
+      }
+
+        .bgcover{
+    background-image: url("/static/custom img/phpcover.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:800px;
+    margin-top: 0;
+    width:100%;
+}  
+@media(max-width: 900px){
+    .bgcover{
+     background-size: contain;
+     height:400px;
+     margin-top: -50px;
+     margin-bottom: -50px;
+
+    }
+}
+    .bgcover-title{
+      padding-left: 100px;
+      padding-top:100px;
+          }
+
+    .bgcover-subtitle{
+      padding-top: 10px;
+      padding-left: 100px;
+    }
+
+    .phpprofile{
+      display: flex;
+      flex-direction: row;
+    }
+    .left-phpprofile{
+      flex: 80%;
+    }
+    .right-phpprofile-content{
+      padding:10px;
+      margin: 10px;
+    }
+
+    .php-profile-img{
+      height: 180px;
+      width: 100%;
+    }
+   /***** for later use ******/
+    .right-phpprofile{
+       flex: 20%;
+       background-color: rgb(0, 0, 87);
+       color: white;
+       margin-left: 20px;
+    }
+
+    /** endfor **/
+    
+    @media(max-width: 900px){
+       .phpprofile{
+      flex-direction: column;
+      width: 100%;
+    }
+    /***** for later use ******/
+     .right-phpprofile{
+      margin-top:10px;
+     }
+    /** endfor **/
+     #php-profile-button{
+      width: 100%;
+     }
+    }
+
+    @media(max-width: 900px){
+      .php-profile-img{
+        margin-bottom: 15px;
+      }
+      .let-php-card-view{
+        margin: 15px;
+      }
+    }
+
+
+  </style>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark mynav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Cive Expert Forum</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'expertsHome' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/phpexpertprofile">Make Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/meetphpexpert">View Post</a>
+              </li>
+             </ul>
+            <form class="d-flex">
+              {% if user.is_authenticated %}
+              <h6 class="m-2 text-white" style="text-transform:capitalize;">Welcome {{user.username}} </h6>
+              <a class="btn btn-success" href="/logout">logout</a>
+              {% endif %}
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+      {% block content %}
+
+      {% endblock %}
+      
+      <footer class="footer-group  mt-3">
+             <div class="footer-item">
+                    All &copy; rights are being reserved on this forum.
+             </div>
+      </footer>
+
+
+      <script src="{% static './bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

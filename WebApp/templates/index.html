@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup page</title>
+    <link rel="stylesheet" type="text/css" href="{% static './stylesheet/css/mystyle.css' %}"/>
+<style>
+.signup-button{
+    width: 100%;
+}
+     .signup-button:hover{
+        background-color: rgb(36, 5, 114);
+        transition: all 1s ease-in-out;
+        color: white;
+        cursor: pointer;
+     }
+     .box-container-item-right,
+     .paragraph-button{
+         transition-delay: 2s;
+         animation-name: slide2;
+         animation-duration: 4s;
+     }
+     @keyframes slide2{
+         from {margin-left: 100%; width: 100%;
+         height: 400px;}
+         to {margin-left: 0%;width: 100%;
+         height: 400px;}
+     }
+     .box-container-item-left{
+         transition-delay: 2s;
+         animation-name: slide1;
+         animation-duration: 4s;
+     }
+     @keyframes slide1{
+        from {margin-right: 100%; width: 50%;
+         height: 100px;}
+         to {margin-right: 0%;width: 100%;
+         height: 100px;}
+     }
+</style>
+</head>
+<body class="box-container-group-list">
+    <center>
+        <div class="box-box">
+            <div class="box-container-item">
+                <div class="box-container-item-left">
+                     <h1>CIVE EXPERT FORUM</h1>
+                     <br>
+                     <p>Learn new technologies from experienced experts within CIVE.</p>
+                     <br>
+                     <p>Lets make cive a center of excellence and technology innovations.</p>
+                </div>
+                
+            </div>
+            <div class="box-container-item">
+                <div class="box-container-item-right">
+                     Sign Up
+                     <br>
+                     <br>
+                     <button class="signup-button" id="signup-amateur">Sign Up as Amateur</button>
+                     <br>
+                     <br>
+                     --------------- or ----------------
+                     <br>
+                     <br>
+                     <button class="signup-button" id="signup-experts">Sign Up as Experts</button>
+                     <br>
+                     <br>
+                     <br>
+                     Already have account <a href="{% url 'loginIndex' %}">Login</a>
+                </div>
+                <br>
+                <br>
+                
+                <p class="paragraph-button" style="color:green; font-weight: 500;">Learn more&ensp;<span><button id="learnmore-btn" style="border-radius: 50%; background-color: red; padding:2px; color: white; cursor: pointer;"> > </button></span></p>
+                
+            </div>
+       </div>
+    </center>
+   
+
+      <script src="{% static './stylesheet/js/myjs.js' %}"> </script>
+
+      <script>    
+           var btn=document.getElementById("learnmore-btn");
+                btn.onclick=function(){
+                   window.alert("CIVE expert forum provide the better knownledge for students,where by students ask different questions about specific topic then experts provide answers corresponding to the questions asked from their students,You are welcome.");
+                };
+
+                var amateursignup=document.getElementById('signup-amateur');
+                    amateursignup.onclick=function(){
+                        window.location.href="amateurSignUp";
+                    };
+      </script>
+</body>
+</html>

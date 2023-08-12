@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript questions</title>
+    <link rel="stylesheet" href="{% static './bootstrap/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static './stylesheet/css/mystyle.css '%}"/>
+    <script src="{% static './stylesheet/js/myjs.js '%}"></script>
+    <script src="{% static './stylesheet/jquery/jquery.js' %}"></script>
+    
+    <style>
+      .unselectable-qns{
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
+      .myheader,#timer,#button,.footer{
+        background-color: rgb(0, 0, 87);
+      }
+       
+       @media(max-width: 900px){
+          #button{
+            width: 90%;
+          }
+       }
+       
+       #returnbtn{
+        display: none;
+        background-color: rgb(0, 0, 87);
+        color: white;
+       }
+        #card-js{
+        border-left: 1px solid rgb(0, 0, 87);
+        box-shadow: 0 2px 2px 0 black;
+        padding: 10px;
+        margin-bottom: 20px;
+       }
+
+       input[type=radio]{
+        cursor:pointer;
+       }
+
+        #card-js:hover{
+        background-color: rgb(0, 0, 87);
+        color: white;
+        transition: all .8s ease-out .2s;
+        width: 100%;
+        height: 165px;
+        border-radius: 50px;
+        padding-top:2px;
+       }
+
+       @media(max-width: 900px){
+        #card-js:hover{
+        height: 220px;
+       } 
+             }
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <nav>
+         <h3 class="p-3 myheader text-white">Javascript MCQs</h3>
+    </nav>
+
+    <main>
+    <div class="container mt-3">
+        <div class="popup"></div>
+        <h1 class="text-primary">Welcome to Javascript Questions.</h1>
+        <p class="mt-3">You are required to survey the followings questions inorder to signup as experts. <span id="timer" class="text-white p-2"></span></p> 
+
+         <h3 class="text-primary">Select correct answer from questions below.</h3> 
+
+        <div id="returnbtn" class="mt-3 mb-1 p-5">
+            <h1>Hi, Expert.</h1>
+            <p>Due to the time counting is ended  the questions now are disappeared, now try to go back to open questions again, thanks.</p>
+            <a class="btn btn-success" href="/alljsQuestions">Back to Open Questions</a>
+        </div>
+
+        <div class="jscanter">
+             <div id="jscanter-left" class="jscanter-left">
+              <form action="{% url 'javascriptQuestions1' %}" method="post">
+                {% csrf_token %}  
+              <div class="unselectable-qns" id="unselectable-qns" unselectable="on">
+                {% for q in jsqns1 %}
+                <div class="container" id="card-js">
+                <table class="m-3">
+                    <tr>
+                     <td class="text-primary">{{q.qns}}</td>
+                    </tr>
+
+                    <tr class="m-2">
+                      <td>  <input class="form-check-input" type="radio" class="rb" name="{{q.qns}}" id="opt1" value="{{q.opt1}}"/>{{q.opt1}} </td>
+                    </tr>
+
+                    <tr>
+                     <td>  <input class="form-check-input" type="radio" class="rb" name="{{q.qns}}" id="opt2" value="{{q.opt2}}"/>{{q.opt2}} </td>
+                   </tr>
+
+                   <tr>
+                     <td>  <input class="form-check-input" type="radio" class="rb" name="{{q.qns}}" id="opt3" value="{{q.opt3}}"/>{{q.opt3}} </td>
+                   </tr>
+
+                   <tr>
+                     <td>  <input class="form-check-input" type="radio" class="rb" name="{{q.qns}}" id="opt4" value="{{q.opt4}}"/>{{q.opt4}} </td>
+                   </tr>
+
+                   {% comment %} <tr>
+                     <td> <label  style="display:none; color:green;" id="ans" class="rb"> <b> {{i.ans}} </b></label> </td>
+                   </tr> {% endcomment %}
+                    
+                </table>
+             </div>
+             {% endfor %}
+              </div>
+                <input type="submit" class=" mt-3 btn btn-success m-3" value="Submit" id="button" onclick="getAnswers()"/>
+              </form>
+              </div>
+          
+             <div class="jscanter-right">
+                  {% comment %} <b id="userAnswers"></b> {% endcomment %}
+
+                  {% comment %} <h3 style="text-align:center;border-bottom:2px solid white; margin:10px;color:white;">World talk</h3>
+                  <div class="container">
+                    <marquee direction="down" behavior="scroll" scrollamount="5">Welcome Javascript Expert, try to attempt the following questions.<br><br>Welcome Javascript Expert, try to attempt the following questions.<br><br>Welcome Javascript Expert, try to attempt the following questions. </marquee>
+                  </div> {% endcomment %}
+                 
+             </div>
+        </div>    
+    </div>
+
+</main>
+
+  <footer class="footer text-white text-center p-3">
+           All &copy; rights are reserved by this site.
+   </footer>
+
+    <script>
+        $(document).ready(function(){
+            $("#button").click(function(){
+                $(".rb").show();
+                $(".rb").attr("disabled",true);
+             });
+        });      
+    </script>
+
+    {% comment %} <script>
+     function getAnswers(){
+     document.getElementById("userAnswers").innerHTML="";
+     var e=document.getElementsByTagName("input");
+
+     for(i=0;i<=e.length;i++){
+          if(e[i].type=="radio"){
+               if(e[i].checked){
+                    document.getElementById("userAnswers").innerHTML+="Question"+e[i].name+"Answer selected is:"+e[i].value+"<br>";
+
+               }
+          }
+      
+     }
+     
+}
+    </script> {% endcomment %}
+
+    <script>
+       var timer=document.getElementById("timer");
+       var button=document.getElementById("button");
+     
+      
+
+       var sec=16;      // var min=Math.floor(sec/60)
+       setInterval(()=>{
+         sec-=1;
+         timer.innerHTML=" "+"<b>* time left :"+"  "+sec+"  "+"seconds<b>";
+          
+           if(sec==0){
+
+             timer.innerHTML="<b>time finished !!!</b>";
+             window.document.getElementById("returnbtn").style.display="block";
+             window.document.getElementById("unselectable-qns").style.display="none";
+             button.disabled=true;  
+             sec+=1;
+
+           }
+       },1000);      
+    </script>
+
+</body>
+</html>

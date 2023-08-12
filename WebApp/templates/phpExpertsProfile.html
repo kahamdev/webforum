@@ -1,0 +1,85 @@
+{% extends 'expertBase.html' %}
+
+{% load static %}
+{% comment %} {% load crispy_forms_tags %} {% endcomment %}
+
+{% block title %} php experts profile {% endblock title %}
+
+{% block content %}
+ <style>
+   .phpfloating-btn{
+    text-decoration: none;
+    color: #ffff;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px black;
+    padding: 10px;
+    background-color: rgb(10, 132, 247);
+    right: 20px;
+    bottom: 20px;
+    transition: all 0.8s ease-in-out 0.2s;
+    position: fixed;
+    cursor: pointer;
+}
+.phpfloating-btn:hover{
+      background-color: rgb(92, 3, 52);
+      color: #ffff;
+
+}
+
+.php-create-profile{
+     max-width: 700px;
+     margin:0 auto;
+     background-color: #ffff;
+     height:500px;
+ }
+ input[type=text],
+ input[type=email],
+ input[type=file],
+ input[type=submit]{
+      width:100%;
+ }
+ textarea{
+      height:80px;
+ }
+
+      </style>
+
+     <div class="phpImageBg"></div>
+     <div class="container">
+           <a href="{% url 'askphp' %}" class="phpfloating-btn" >view post</a>
+           <div class="php-create-profile">
+                <form action="{% url 'phpExpertsProfile' %}" method="post">
+                    {% csrf_token %}
+                      
+                     <div class="form-group mb-3 mt-3">
+                         <label for="name"><span class="text-danger">*</span>Full name</label>
+                         <input class="form-control" type="text" placeholder="enter your name" name="name" id="name" required/>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="email"><span class="text-danger">*</span>Email</label>
+                        <input class="form-control" type="email" placeholder="enter your email" name="email" id="email" required/>
+                   </div>
+
+                    <div class="form-group mb-3">
+                        <label for="title"><span class="text-danger">*</span>Title</label>
+                        <input class="form-control" type="text" placeholder="php developer" name="title" id="title" required/>
+                   </div>
+
+                   <div class="form-group mb-3">
+                    <label for="profesion"><span class="text-danger">*</span>Professionate</label>
+                    <textarea name="professionate" class="form-control" placeholder="I am php developer ......."></textarea>
+                   </div>
+                   
+                   <div class="form-group mb-3">
+                    <label for="photo"><span class="text-danger">*</span>Photo <span>(only jpeg file)</span></label>
+                        <input type="file" accept=".txt" value="photo" name="photo" required/>
+                   </div>
+                   <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="submit" name="submit"/>
+                   </div>
+                </form>
+           </div> 
+
+     </div>
+{% endblock %}

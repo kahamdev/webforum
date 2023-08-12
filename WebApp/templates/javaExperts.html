@@ -1,0 +1,122 @@
+{% extends 'expertBase.html' %}
+
+{% load static %}
+
+{% block title %} java experts {% endblock title %}
+
+{% block content %}
+<style>
+      .javafloating-btn{
+       text-decoration: none;
+       color: #ffff;
+       border-radius: 50%;
+       box-shadow: 2px 2px 5px black;
+       padding: 10px;
+       background-color: rgb(10, 132, 247);
+       right: 20px;
+       bottom: 20px;
+       transition: all 0.8s ease-in-out 0.2s;
+       position: fixed;
+       cursor: pointer;
+   }
+   .javafloating-btn:hover{
+         background-color: rgb(92, 3, 52);
+         color: #ffff;
+   
+   }
+ </style>  
+     <div class="javaImageBg"></div>
+     <div class="container">
+      <a href="{% url 'askjava' %}" class="javafloating-btn" >ask us</a>
+         <div class="java-content">
+               <div class="left-java-content">
+                      <div class="left-top-java-content">
+                            <span><img  class="image-circle" width="50" height="50" src="/static/stylesheet/img/udomimage.jpg"/> Raul expert</span>
+                      </div>
+                      <div class="left-middle-java-content">
+                            <p>I am java developer with 5 years of experience, with alot
+                                 of my projects that done using php programming language.
+                            </p>
+                      </div>
+                      <div class="left-bottom-java-content">
+                        <button class="btn btn-primary">visit me</button>
+                      </div>
+               </div>
+
+               <div class="right-java-content">
+                <div class="right-top-java-content">
+                    <span><img class="image-circle" width="50" height="50" src="/static/stylesheet/img/udomlogo.png"/> kaham expert</span>
+              </div>
+              <div class="right-middle-java-content">
+                    <p>I am java developer with 5 years of experience, with alot
+                         of my projects that done using php programming language.
+                    </p>
+              </div>
+              <div class="right-bottom-java-content">
+                <button class="btn btn-primary">visit me</button>
+              </div>  
+               </div>
+         </div>
+
+         <div class="java-content">
+            <div class="left-java-content">
+                   <div class="left-top-java-content">
+                         <span><img class="image-circle" width="50" height="50" src="/static/stylesheet/img/reactnative.jpg"/> Zaher expert</span>
+                   </div>
+                   <div class="left-middle-java-content">
+                         <p>I am java developer with 5 years of experience, with alot
+                              of my projects that done using php programming language.
+                         </p>
+                   </div>
+                   <div class="left-bottom-java-content">
+                     <button class="btn btn-primary">visit me</button>
+                   </div>
+            </div>
+
+            <div class="right-java-content">
+             <div class="right-top-java-content">
+                 <span><img class="image-circle" width="50" height="50" src="/static/stylesheet/img/experrtlogin.jpeg"/> Mena expert</span>
+           </div>
+           <div class="right-middle-java-content">
+                 <p>I am java developer with 5 years of experience, with alot
+                      of my projects that done using php programming language.
+                 </p>
+           </div>
+           <div class="right-bottom-java-content">
+             <button class="btn btn-primary">visit me</button>
+           </div>  
+            </div>
+         </div>
+
+         <div class="java-content">
+            <div class="left-java-content">
+                   <div class="left-top-java-content">
+                         <span><img class="image-circle" width="50" height="50" src="/static/stylesheet/img/php.jpg"/> Kabut expert</span>
+                   </div>
+                   <div class="left-middle-java-content">
+                         <p>I am java developer with 5 years of experience, with alot
+                              of my projects that done using php programming language.
+                         </p>
+                   </div>
+                   <div class="left-bottom-java-content">
+                     <button class="btn btn-primary">visit me</button>
+                   </div>
+            </div>
+
+            <div class="right-java-content">
+             <div class="right-top-java-content">
+                 <span><img class="image-circle" width="50" height="50" src="/static/stylesheet/img/civeadminblock.PNG"/> Cive expert</span>
+           </div>
+           <div class="right-middle-java-content">
+                 <p>I am csharp developer with 5 years of experience, with alot
+                      of my projects that done using php programming language.
+                 </p>
+           </div>
+           <div class="right-bottom-java-content">
+             <button class="btn btn-primary">visit me</button>
+           </div>  
+            </div>
+         </div>
+
+     </div>
+{% endblock %}

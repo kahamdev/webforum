@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} amateurHome page {% endblock title %}
+
+{% block content %}
+
+<div class="parent">
+     <div class="image">&ensp;CIVE Admin Block</div>
+     <div class="child">
+        <div class="left">
+             <div class="left-sidebar">
+                  {% include 'leftsidebar.html' %}
+             </div>
+        </div>
+        <div class="right">
+            <div class="right-sidebar">
+                  {% include 'rightsidebar.html' %}
+            </div> 
+            
+        </div>
+     </div>
+  
+</div>
+
+
+
+
+
+{% endblock %}

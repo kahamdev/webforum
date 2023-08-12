@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experts Analysis</title>
+    <link rel="stylesheet" href="{% static './bootstrap/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static './stylesheet/css/mystyle.css '%}"/>
+    
+    <style>
+        body{
+            background-color:rgb(0,0,87);
+        }
+         
+.experts-analysis-item1,
+.experts-analysis-item2,
+.experts-analysis-item3
+{
+    display: flex;
+    flex-direction: row;
+}
+
+@media(max-width:900px){
+    .experts-analysis-item1,
+    .experts-analysis-item2,
+    .experts-analysis-item3{
+        flex-direction: column;
+    }
+    .expert-analysis-title{
+        margin: 20px;
+    }
+}
+
+.experts-analysis-item1,
+.experts-analysis-item2,
+.experts-analysis-item3{
+    margin: 20px;
+}
+
+.experts-analysis-webmage,
+.experts-analysis-desktopmage,
+.experts-analysis-mobilemage{
+    margin: 10px;
+}
+
+@media(max-width:900px){
+    .experts-analysis-webmagepic,
+    .experts-analysis-desktopmagepic,
+    .experts-analysis-mobilemagepic{
+        width: 100%;
+    }
+}
+
+.mylist-content{
+    margin: 20px;
+}
+.experts-analysis{
+    margin:0 auto;
+    max-width: 900px;
+   padding: 10px;
+}
+
+.experts-analysis-item1,
+.experts-analysis-item2,
+.experts-analysis-item3
+{
+    animation-name:myfade;
+    animation-duration: 3s;
+
+}
+@keyframes myfade{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+    </style>
+</head>
+<body>
+ 
+<div class="container experts-analysis">
+    <h1 class="text-info  mb-3 expert-analysis-title">Experts Evaluation Analysis</h1>
+    <p style="color:white;"  class="py-2 expert-analysis-title"><span class="expert-analysis-title" style="color: red; margin: 5px;">*</span>Select an area that you are competent enough.</p>
+    <div class="experts-analysis-item1">
+        
+        <div class="experts-analysis-webmage">
+            <img class="experts-analysis-webmagepic" width="320" height="300" src="{% static 'stylesheet/img/web.jpeg' %}" alt="">
+        </div>
+        <div class="mylist-experts-analysis">
+              <div class="mylist-content">
+                <h4 class="bg-info p-3 text-white">Web application development</h4> 
+                <ol style="color:white;" type="1">
+                    <li><a class="text-info" href="{% url 'alljsQuestions' %}">Javascript programming language.</a></li> 
+                    <li><a class="text-info" href="{% url 'allphpQuestions' %}">Php programming language.</a></li>
+                    <li><a class="text-info" href="{% url 'pythonQuestions' %}">Python programming language.</a></li>
+                </ol>  
+              </div>
+        </div>
+    </div>
+    
+    <div class="experts-analysis-item2">
+
+        <div class="experts-analysis-desktopmage">
+            <img class="experts-analysis-desktopmagepic" width="320" height="300" src="{% static 'stylesheet/img/desktop.png' %}" alt="">
+        </div>
+        <div class="mylist-experts-analysis">
+            <div class="mylist-content">
+                <h4 class="bg-info p-3 text-white">Desktop application development</h4> 
+                <ol style="color:white;" type="1">
+                    <li><a class="text-info" href="{% url 'cplusplusQuestions' %}">C++ programming language.</a></li>
+                    <li><a class="text-info" href="{% url 'csharpQuestions' %}">C-sharp programming language.</a></li>
+                    <li><a class="text-info" href="{% url 'javaQuestions' %}">Java programming language.</a></li>
+                </ol>  
+            </div>
+           
+        </div>
+    </div>
+    
+    <div class="experts-analysis-item3">
+        
+        <div class="experts-analysis-mobilemage">
+            <img class="experts-analysis-mobilemagepic" width="320" height="300" src="{% static 'stylesheet/img/mobile.jpg' %}" alt="">
+        </div>
+        <div class="mylist-experts-analysis">
+            <div class="mylist-content">
+                <h4 class="bg-info p-3 text-white">Mobile application development.</h4>
+                <ol style="color:white;" type="1">
+                    <li><a class="text-info" href="{% url 'androidQuestions' %}">Android mobile development.</a></li>
+                    <li><a class="text-info" href="{% url 'reactNativeQuestions' %}">React native mobile development.</a></li>
+                    <li><a class="text-info" href="{% url 'flutterQuestions' %}">Flutter mobile development.</a></li>
+                </ol>
+            </div>
+            
+        </div>  
+    </div>
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

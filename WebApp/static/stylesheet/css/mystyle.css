@@ -1,0 +1,584 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer.footer-group{
+    color: white;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+div.footer-item{
+  text-align: center;  
+}
+
+body.box-container-group-list{
+    background-color: rgb(0,0,87);
+}
+div.box-box{
+  padding: 10%;
+}
+div.box-container-item{
+    float: left;
+    margin: 30px;
+    padding: 10px; 
+    /* width: 40%;   */
+}
+div.box-container-item-left{
+    margin: 10px;  
+    color: white;
+}
+div.box-container-item-right{
+   background-color: white;
+   padding: 60px;
+}
+
+button.signup-button{
+    padding: 10px;
+}
+
+.mylist-experts-analysis li{
+    padding: 10px;
+}
+
+.mylist-experts-analysis li a{
+    text-decoration: none;
+}
+
+.parent{
+    background-color: #ffff;
+}
+
+
+.image{
+    background-image: url("/static/stylesheet/img/civeadminblock.PNG");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+    color: white;
+    font-style:oblique;
+    font-size: 25px;
+}
+.phpImageBg{
+    background-image: url("/static/stylesheet/img/phpbg.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+.pythonImageBg{
+    background-image: url("/static/stylesheet/img/python.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+.javascriptImageBg{
+    background-image: url("/static/stylesheet/img/jsbg.png");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+.cplusplusImageBg{
+    background-image: url("/static/stylesheet/img/cplusplus.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+.csharpImageBg{
+    background-image: url("/static/stylesheet/img/csharp2.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+.javaImageBg{
+    background-image: url("/static/stylesheet/img/java.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+.flutterImageBg{
+    background-image: url("/static/stylesheet/img/flutter.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+.androidImageBg{
+    background-image: url("/static/stylesheet/img/android.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+.reactnativeImageBg{
+    background-image: url("/static/stylesheet/img/reactnative.jpg");
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:250px;
+    margin-top: 0;
+    width:100%;
+}
+.child{
+    display: flex;
+    flex-direction: row;
+    max-width: 900px;
+    margin:0 auto;
+    margin-top: -50px;
+    box-shadow: 0 4px 4px 0  black;
+    min-height: 100vh;
+}
+
+.left{
+    flex: 25%;
+    padding: 20px;
+    background-color: #ffff;
+    border-right: 1px solid black;
+}
+
+.right{
+    flex: 75%;
+    padding: 20px;
+    background-color: #ffff;
+}
+
+@media(max-width:900px){
+    .child{
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.right-parent{
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:900px) {
+    .right-parent{
+        flex-direction: column;
+    }
+}
+
+.right-child1,
+.right-child2,
+.right-child3,
+.right-child4,
+.right-child5,
+.right-child6,
+.right-child7,
+.right-child8,
+.right-child9{
+    padding: 30px;
+    margin: 10px;
+    width: 100%;
+    height: 180px;
+    box-shadow: 0 2px 2px 0 black;
+}
+
+.right-child1{
+    background-image: url("/static/stylesheet/img/php.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:auto;
+}
+
+.right-child2{
+    background-image: url("/static/stylesheet/img/javascript.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:auto;
+}
+
+.right-child3{
+    background-image: url("/static/stylesheet/img/python.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
+.right-child4{
+    background-image: url("/static/stylesheet/img/cplusplus.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:auto;
+}
+.right-child5{
+    background-image: url("/static/stylesheet/img/java.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:auto;
+}
+
+.right-child6{
+    background-image: url("/static/stylesheet/img/csharp2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:auto;
+}
+
+.right-child7{
+    background-image: url("/static/stylesheet/img/reactnative.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
+.right-child8{
+    background-image: url("/static/stylesheet/img/android.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+
+.right-child9{
+    background-image: url("/static/stylesheet/img/flutter.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+.right-child1:hover{
+    transform: translateY(15px);
+    transition: all .8s ease-in-out;
+}
+.right-child2:hover{
+    transform: translateY(15px);
+    transition: all .8s ease-in-out;
+}
+.right-child3:hover{
+    transform: translateY(15px);
+    transition: all .8s ease-in-out;
+}
+.right-child4:hover{
+    transform: translateY(15px);
+    transition: all .8s ease-in-out;
+}
+.right-child5:hover{
+    transform: translateY(15px);
+    transition: all .8s ease-in-out;
+}
+.right-child6:hover{
+    transform: translateY(15px);
+    transition: all .8s ease-in-out;
+}
+.right-child7:hover{
+    transform: translateY(15px);
+    transition: all .8s ease-in-out;
+}
+.right-child8:hover{
+    transform: translateY(15px);
+    transition: all .8s ease-in-out;
+}
+.right-child9:hover{
+    transform: translateY(15px);
+    transition: all .8s ease-in-out;
+}
+
+.right-child1:hover{
+    background-color:  rgb(0,0,87);
+    transition: all .8s ease-in-out 0.1s;
+}
+
+.right-child2:hover{
+    background-color:  rgb(0,0,87);
+    transition: all .8s ease-in-out 0.1s;
+}
+.right-child3:hover{
+    background-color:  rgb(0,0,87);
+    transition: all .8s ease-in-out 0.1s;
+}
+.right-child4:hover{
+    background-color:  rgb(0,0,87);
+    transition: all .8s ease-in-out 0.1s;
+}
+.right-child5:hover{
+    background-color:  rgb(0,0,87);
+    transition: all .8s ease-in-out 0.1s;
+}
+.right-child6:hover{
+    background-color:  rgb(0,0,87);
+    transition: all .8s ease-in-out 0.1s;
+}
+.right-child7:hover{
+    background-color:  rgb(0,0,87);
+    transition: all .8s ease-in-out 0.1s;
+}
+.right-child8:hover{
+    background-color:  rgb(0,0,87);
+    transition: all .8s ease-in-out 0.1s;
+}
+.right-child9:hover{
+    background-color:  rgb(0,0,87);
+    transition: all .8s ease-in-out 0.1s;
+}
+
+.sidebar{
+    background-color: #ffff;
+}
+
+.sidebar-items{
+    padding: 10px;
+    margin: 10px;
+}
+
+div.sidebar-items ul li{
+    list-style-type: none;
+   
+}
+
+.sidebar-items ul li a{
+    text-decoration: none;
+
+}
+
+.about-content{
+    max-width: 900px;
+    margin: 0 auto;
+    height: 85vh;
+
+}
+
+.about-container{
+    margin: 10px;
+}
+
+@media(max-width:900px){
+    .web-container,
+    .desktop-container,
+    .mobile-container{
+        margin-top:-170px;
+    }
+}
+
+.first-paragraph::first-line{
+    letter-spacing: 4px;
+}
+
+.first-paragraph::first-letter{
+    font-size: 300%;
+    color:rgb(0,0,87);
+}
+
+h2.web-header,
+h2.desktop-header,
+h2.mobile-header
+{
+    border-bottom: 1px solid  rgb(0,0,87);
+    border-width: 10px;
+    border-radius: 30px;
+    padding: 10px;
+    text-align: center;
+}
+.desktop-header{
+    font-size: 30px;
+}
+
+
+@media(max-width:900px){
+    h2.web-header,
+    h2.desktop-header,
+    h2.mobile-header{
+        font-size: 23px;
+        text-align: center;
+    }
+}
+
+.web-list,
+.mobile-list,
+.desktop-list{
+    padding: 20px;
+}
+
+
+
+.left-php-content,
+.left-python-content,
+.left-javascript-content,
+.left-java-content,
+.left-cplusplus-content,
+.left-csharp-content,
+.left-android-content,
+.left-flutter-content,
+.left-reactnative-content,
+{
+    border-left: 1px solid rgb(0,0,87);
+    border-width: 3px;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.left-top-php-content,
+.left-top-python-content,
+.left-top-javascript-content,
+.left-top-java-content,
+.left-top-cplusplus-content,
+.left-top-csharp-content,
+.left-top-android-content,
+.left-top-reactnative-content,
+.left-top-flutter-content,
+{
+    padding: 5px;
+}
+
+.left-middle-php-content,
+.left-middle-python-content,
+.left-middle-javascript-content,
+.left-middle-java-content,
+.left-middle-cplusplus-content,
+.left-middle-csharp-content,
+.left-middle-android-content,
+.left-middle-reactnative-content,
+.left-middle-flutter-content{
+    padding:10px;
+}
+.left-bottom-php-content,
+.left-bottom-python-content,
+.left-bottom-javascript-content,
+.left-bottom-java-content,
+.left-bottom-cplusplus-content,
+.left-bottom-csharp-content,
+.left-bottom-android-content,
+.left-bottom-reactnative-content,
+.left-bottom-flutter-content{
+    padding: 5px;
+}
+
+.image-circle{
+    border-radius: 50%;
+}
+.image-circle:hover{
+    transform: scale(1.5);
+    transition: all .8s ease-in-out .1s;
+}
+
+             
+.jscanter,
+.androidcanter,
+.cpluscanter,
+.csharpcanter,
+.fluttercanter,
+.javacanter,
+.phpcanter,
+.pythoncanter,
+.reactnativecanter{
+    display: flex;
+    flex-direction: row;
+}
+
+.jscanter-left,
+.androidcanter-left,
+.cpluscanter-left,
+.csharpcanter-left,
+.fluttercanter-left,
+.javacanter-left,
+.phpcanter-left,
+.pythoncanter-left,
+.reactnativecanter-left{
+    flex:75%;
+    background-color: white;
+}
+
+.jscanter-right,
+.androidcanter-right,
+.cpluscanter-right,
+.csharpcanter-right,
+.fluttercanter-right,
+.javacanter-right,
+.phpcanter-right,
+.pythoncanter-right,
+.reactnativecanter-right{
+    flex:25%;
+    /* background-color: #f3f1f1; */
+    /* background-color:rgb(0,0,46); */
+    height: 300px;
+}
+
+marquee{
+    font-size:18px;
+    font-weight:800;
+    color:white;
+  }
+
+@media(max-width:900px){
+    .jscanter,
+    .androidcanter,
+    .cpluscanter,
+    .csharpcanter,
+    .fluttercanter,
+    .javacanter,
+    .phpcanter,
+    .pythoncanter,
+    .reactnativecanter{
+        flex-direction: column;
+    }
+
+    .jscanter-left,
+    .androidcanter-left,
+    .cpluscanter-left,
+    .csharpcanter-left,
+    .fluttercanter-left,
+    .javacanter-left,
+    .phpcanter-left,
+    .pythoncanter-left,
+    .reactnativecanter-left{
+        width: 100%;
+    }
+
+    .jscanter-right,
+    .androidcanter-right,
+    .cpluscanter-right,
+    .csharpcanter-right,
+    .fluttercanter-right,
+    .javacanter-right,
+    .phpcanter-right,
+    .pythoncanter-right,
+    .reactnativecanter-right{
+        width: 100%;
+        margin-top:20px;
+    }
+}
+
+
+.bg-side{
+    background-color: rgb(0,0,87);
+}
+
+
+.js-profile-img{
+    border-radius: 50%;
+}
+
+
+
